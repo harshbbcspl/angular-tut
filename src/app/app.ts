@@ -12,8 +12,51 @@ import { Profile } from './profile/profile';
 })
 export class App {
 
+
   
 
+
+
+  //  users=['Harsh','Bhoi','Test','User1','User2'];
+
+  // users=[];
+
+
+
+// userName=signal("Harsh Bhoi");
+// count=signal(0);
+// displayHeading=false;
+
+// constructor(){
+//   effect(()=>{
+//    if(this.count()==2)  {
+//     this.displayHeading=true;
+//     setTimeout(()=>{
+//        this.displayHeading=false;
+//     },2000)
+//    }
+//     else{
+//       this.displayHeading=false;
+//     }
+//   })
+// }
+
+// toggleValue(){
+//   this.count.set(this.count()+1);
+ 
+// }
+
+
+
+//   x=10;
+//   y=20;
+//   z=this.x+this.y;
+// showValue(){
+//   console.log(this.z)
+ 
+//   this.x=30;
+//     console.log(this.z)
+// }
 
 
 
