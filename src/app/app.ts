@@ -1,20 +1,161 @@
 import { Component, computed, effect, Signal, signal, WritableSignal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
 import { Signup } from './signup/signup';
-import { Profile } from './profile/profile';
+
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
+import { Header } from './header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Login, Signup, Profile],
+  imports: [RouterOutlet,ReactiveFormsModule,RouterLink,NgSwitchDefault, Login, Signup,Header,  FormsModule,NgIf,NgFor,NgSwitch,NgSwitchCase],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
-export class App {
+export class App {  
+
+  profileForm = new FormGroup(
+    {
+      name:new FormControl('',[Validators.required]),
+      password:new FormControl('',[Validators.required,Validators.minLength(5)]),
+      email:new FormControl('',[Validators.required,Validators.maxLength(50),Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")])
+    }
+  )
+
+onSubmit(){
+  console.log(this.profileForm.value)
+}
+
+get name(){
+  return this.profileForm.get('name');
+}
+get password(){
+  return this.profileForm.get('password');
+}
+get email(){
+  return this.profileForm.get('email');
+}
 
 
+
+// setValue(){
+//   this.profileForm.setValue(
+//     {
+//       name:'ashu',
+//       password:'admn',
+//       email:"tudu.com"
+//     }
+//   )
+// }
+
+//   name=new FormControl('harsh');
+//   password= new FormControl('bhoi');
+
+
+// display(){
+//   console.log(this.name.value,this.password.value)
+// }
+
+// setValue(){
+//   this.name.setValue('me');
+//   this.password.setValue('admin');
+// }
+// Show=false;
+
+// color="black";
+
+
+// chnagecolor(color:string){
+//   this.color=color
+// }
+
+
+// login=true;
+
+// block=0
+
+// update(){
+//   this.block++;
+// }
+
+
+
+
+// students=["hars","xyz","loop"]
+
+// studentsData=[
+//   {
+//     name:"harhs",
+//     age:"20",
+//   },
+//     {
+//     name:"xyz",
+//     age:"25",
+//   },
+//     {
+//     name:"erre",
+//     age:"28",
+//   },
+//     {
+//     name:"try",
+//     age:"15",
+//   }
+// ]
+
+// studentsData1 = [
+//     {
+//       name: 'Harsh',
+//       age: 20,
+//       subjects: ['Math', 'Science', 'English']
+//     },
+//     {
+//       name: 'XYZ',
+//       age: 25,
+//       subjects: ['Physics', 'Chemistry']
+//     },
+//     {
+//       name: 'Erre',
+//       age: 28,
+//       subjects: ['Accounts', 'Economics', 'Business']
+//     },
+//     {
+//       name: 'Try',
+//       age: 15,
+//       subjects: ['History']
+//     }
+//   ];
+
+// color='blue'
+// fontSize='30px'
+// headingSizeBig='50px'
+// headingSizeSmall='20px'
+
+// zoom=true
+
+// updateHeadingSize(){
+//   this.zoom=!this.zoom;
+//  }
+
+// task="";
+// taskList:{id:number,task:string}[]= [];
+
+// addTask(){
+//   if(this.task!==""){
+//     this.taskList.push({id:this.taskList.length+1,task:this.task});
+//     this.task="";
+//   }}
+
+// deleteTask(id:number){
+//   this.taskList=this.taskList.filter(item=>item.id!==id);
+// }
+// name="harsh"
+
+// chnageName(event:Event  ){
+//   this.name=(event.target as HTMLInputElement).value;
+ 
   
-
+// }
 
 
   //  users=['Harsh','Bhoi','Test','User1','User2'];

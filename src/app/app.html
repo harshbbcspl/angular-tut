@@ -1,8 +1,234 @@
-<h1>Two Way Binding</h1>
+<h1>Form Grouping In Reactive Froms</h1>
+
+<form action="" [formGroup]="profileForm" method="get" (ngSubmit)="onSubmit()">
+    <input type="text" placeholder="Enter Name" formControlName="name">
+    <span *ngIf="name?.hasError('required')">Name is Required</span>
+    <span class="error" *ngIf="name?.invalid &&(name?.dirty || name?.touched)">User Enter</span>
+    <br>
+    <br>
+    <input type="text" placeholder="Enter Password" formControlName="password">
+    <span *ngIf="password?.hasError('required')">Password is Required</span>
+    <span class="error" *ngIf="password?.invalid &&(password?.dirty || password?.touched)">Password Enter</span>
+    <br>
+    <br>
+    <input type="text" placeholder="Enter Email" formControlName="email">
+    <span *ngIf="email?.hasError('required')">Email is Required</span>
+    <span class="error" *ngIf="email?.invalid &&(email?.dirty || email?.touched)">Email Enter</span>
+    <br>
+    <br>
+    <button>Submit</button>
+      <!-- <button type="button" (click)="setValue()">Set</button> -->
+</form>
+
+<!-- <h1>{{this.profileForm.value.email}}</h1> -->
+
+
+
+<!-- <h1>Basic of React Froms</h1>
+<form action="" method="post">
+    <input type="text" placeholder="Enter Name" [formControl]="name">
+    <br>
+    <br>
+    <input type="text" placeholder="Enter Password"[formControl]="password">
+    <br>
+    <br>
+    <button (click)="display()">Login</button>
+   <button (click)="setValue()">Set Value</button>
+
+</form> -->
 
 
 
 
+<!-- <app-header></app-header>
+<h1>Header With Routing</h1> -->
+
+
+
+
+
+
+
+
+
+<!-- <h1>Routing</h1>
+<ul>
+    <li>
+        <a routerLink="login">Login</a>
+    </li>
+    <li>
+        <a routerLink="about">About</a>
+    </li>
+    <li>
+        <a routerLink="contact">Contact</a>
+    </li>
+</ul>
+
+
+
+<router-outlet>
+
+
+
+</router-outlet> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <h1>Directives in Angular</h1>
+
+<h1 *ngIf="Show">Heading Tag</h1>
+
+<h1>*ngSwitch</h1>
+
+<button (click)="chnagecolor('red')">Red</button>
+<button (click)="chnagecolor('green')">green</button>
+<button (click)="chnagecolor('blue')">blue</button>
+
+<div [ngSwitch]="color">
+
+
+<h1 *ngSwitchCase="'blue'" style="background-color: blue;">H1</h1>
+<h1 *ngSwitchCase="'green'" style="background-color: rgb(26, 255, 0);">H2</h1>
+<h1 *ngSwitchCase="'red'" style="background-color: rgb(255, 25, 0);">H3</h1>
+<h1 *ngSwitchDefault>NO</h1>
+</div> -->
+
+
+
+
+<!-- <h1>*nf for</h1>
+
+
+<ul>
+    <li
+        *ngFor="let x of students">
+        {{x}}
+</li>
+</ul>
+
+<ul>
+    <li
+        *ngFor="let student of studentsData">
+        {{student.name}},   {{student.age}}
+</li>
+</ul>
+
+<ul>
+  <li *ngFor="let student of studentsData1">
+    <strong>{{ student.name }} – {{ student.age }}</strong>
+    <ul>
+      <li *ngFor="let subject of student.subjects">
+        {{ subject }}
+      </li>
+    </ul>
+  </li>
+</ul> -->
+
+
+
+<!-- <h1>*ngIf</h1>
+
+<div *ngIf="block==0">
+    <h1>Heading0</h1>
+</div>
+<div *ngIf="block==1">
+    <h1>Heading1</h1>
+</div>
+<div *ngIf="block==2">
+    <h1>Heading2</h1>
+</div>
+
+<button (click)="update()">Update</button>
+
+ -->
+
+
+<!-- <div *ngIf="login; else elseBlock">
+
+
+<a href="">Logout</a>
+
+</div>
+<ng-template #elseBlock>
+
+<a href="/">Login</a>
+</ng-template>
+
+
+
+
+<br> -->
+
+
+
+<!-- <h1>Dynamic Style</h1>
+
+
+<h1 [style.backgroundColor]="color"
+ [style.fontSize]="fontSize"
+>Dynamic Style</h1>
+
+
+
+<h1 [style.fontSize]="zoom ? headingSizeBig : headingSizeSmall"> Headin</h1>
+
+
+<button (click)="updateHeadingSize()">Toggle Chnage</button>
+ -->
+
+
+
+
+<!-- <h1> TO DO List App</h1>
+
+<input type="text" placeholder="Enter Task" [(ngModel)]="task">
+
+<button (click)="addTask()">Add Task</button>
+
+
+@for(task of taskList; track task.id){
+    <h2>
+        <span>{{task.task}}</span>
+        <button (click)="deleteTask(task.id)">Delete</button>
+    </h2>
+}
+
+ -->
+
+
+
+
+<!-- 
+<h1>Two Way Binding</h1> -->
+
+<!-- <input [(ngModel)]="name" type="text" placeholder="Enter Name">
+
+
+<h1>{{name}}</h1> -->
+
+<!-- 
+<input type="text" (input)="chnageName($event)" placeholder="Enter Name">
+
+<h1>{{name}}</h1> -->
 
 
 
