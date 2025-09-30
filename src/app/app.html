@@ -1,4 +1,118 @@
-<h1>Form Grouping In Reactive Froms</h1>
+<h1>Custom Pipe In Angular</h1>
+<h2>{{amount | currencyConvertor}}</h2>
+
+<h2>{{100 | currencyConvertor:12}}</h2>
+
+<h2>{{150 | currencyConvertor:5}}</h2>
+
+<!-- <h1>
+    Pipes in Angular
+</h1>
+
+<h1>{{title}}</h1>
+<h1>{{title | uppercase}}</h1>
+<h1>{{title | titlecase}}</h1>
+<h1>{{title | lowercase}}</h1>
+<h1>{{date | date}}</h1>
+<h1>{{date | date:'fullDate'}}</h1>
+<h1>{{date | date:'hh'}}</h1>
+<h1>{{date | date:'hh:mm:ss'}}</h1>
+
+
+<h1>{{amount | currency}}</h1>
+<h1>{{amount | currency:'EUR'}}</h1>
+<h1>{{amount | currency:'INR'}}</h1>
+
+
+<h1>{{date | date:'fullDate' | uppercase}}</h1> -->
+
+<!-- <h1>Pass data Child to Component</h1>
+<app-user (getUsers)="handelUser($event)"></app-user>
+
+@for(user of users; track user){
+    <h1>{{user}}</h1>
+}
+
+
+ -->
+
+
+
+
+<!-- <h1>Reuse Component</h1>
+
+@for(user of users;track user){
+    <div>
+
+        <app-user [user]="user"></app-user>
+    </div>
+} -->
+
+
+
+
+
+
+
+
+<!-- <h1>Pass Data to child component</h1>
+
+<app-user [user]="selectedUser.value" city="Anand"></app-user>
+
+
+<select #selectedUser (change)="onuser(selectedUser.value)" name="" id="">
+    <option value="Harsh">Harsh</option>
+    <option value="Ashu">Ashu</option>
+</select>
+ -->
+
+
+
+
+
+
+
+<!-- <h1>Template Driven Forms</h1>
+
+<form action="" #userForm="ngForm" (ngSubmit)="addDetails(userForm.value)">
+    <input #name="ngModel" type="text" required placeholder="Enter Name" name="name" ngModel>
+    <span class="error" *ngIf="name.invalid && name.touched">Name is Required</span>
+    <br>
+    <br>
+    <input #password="ngModel" minlength="5" maxlength="10" required type="password" placeholder="Enter Password" name="password" ngModel>
+      <span class="error" *ngIf="password.invalid && password.touched">Please enter valid Password is Required</span>
+    <br>
+    <br>
+    <input #email="ngModel"  required type="email" placeholder="Enter Email" email name="email" ngModel>
+      <span class="error" *ngIf="email.invalid && email.touched">Please enter valid email is Required</span>
+    <br>
+    <br>
+    <select name="gender" ngModel>
+        <option value="">Select Gender</option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+    </select>
+    <br>
+    <br>
+    <input type="range" min="0" max="20" name="range" ngModel>
+    <br>
+    <br>
+    <button [disabled]="userForm.invalid">Add User</button>
+</form>
+
+
+<h3>{{userDetails?.name}}</h3>
+<h3>{{userDetails?.password}}</h3>
+<h3>{{userDetails?.gender}}</h3>
+
+<h3>{{userDetails?.range}}</h3> -->
+
+
+
+
+
+
+<!-- <h1>Form Grouping In Reactive Froms</h1>
 
 <form action="" [formGroup]="profileForm" method="get" (ngSubmit)="onSubmit()">
     <input type="text" placeholder="Enter Name" formControlName="name">
@@ -17,8 +131,8 @@
     <br>
     <br>
     <button>Submit</button>
-      <!-- <button type="button" (click)="setValue()">Set</button> -->
-</form>
+     <button type="button" (click)="setValue()">Set</button> 
+</form> -->
 
 <!-- <h1>{{this.profileForm.value.email}}</h1> -->
 

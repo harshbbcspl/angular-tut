@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output, output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -8,15 +8,29 @@ import { ActivatedRoute } from '@angular/router';
   styleUrl: './user.css'
 })
 export class User {
-  name:null|string=""
-constructor(private route:ActivatedRoute){
 
-}
 
-ngOnInit(){
-  this.route.params.subscribe((params)=>{
-    console.log(params);
-    this.name=params['name'];
-  })
-}
+  @Output() getUsers = new EventEmitter();
+    users=['ram','harsh']
+
+//  @Input() user: string = "";
+//   @Input() city: string = "";
+ 
+ 
+ loaddata(){
+  this.getUsers.emit(this.users);
+ }
+ 
+ 
+//   name:null|string=""
+// constructor(private route:ActivatedRoute){
+
+// }
+
+// ngOnInit(){
+//   this.route.params.subscribe((params)=>{
+//     console.log(params);
+//     this.name=params['name'];
+//   })
+// }
 }
