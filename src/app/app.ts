@@ -16,9 +16,11 @@ import { CurrencyConvertorPipe } from './pipe/currency-convertor-pipe';
   styleUrl: './app.css'
 })
 export class App {  
-  title = "one by one";
-  date = new Date();
-  amount = 10;
+
+  
+  // title = "one by one";
+  // date = new Date();
+  // amount = 10;
 
 
   // users:undefined|string[];
