@@ -1,4 +1,20 @@
-<h1>Public</h1>
+<h1>Users CRUD</h1>
+
+<form #userForm="ngForm" (ngSubmit)="saveUser(userForm)">
+  <input type="text" name="name" [(ngModel)]="selectedUser.name" placeholder="Name" required>
+  <input type="text" name="role" [(ngModel)]="selectedUser.role" placeholder="Role">
+  <input type="number" name="salary" [(ngModel)]="selectedUser.salary" placeholder="Salary">
+  <button type="submit">{{ selectedUser.id ? 'Update' : 'Add' }} User</button>
+</form>
+
+<ul>
+  <li *ngFor="let u of users$ | async">
+    {{ u.name }} — {{ u.role }}
+    <button (click)="editUser(u)">Edit</button>
+    <button (click)="deleteUser(u.id!)">Delete</button>
+  </li>
+</ul>
+
 
 
 

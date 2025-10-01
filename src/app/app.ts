@@ -2,22 +2,75 @@ import { Component, computed, effect, Signal, signal, WritableSignal } from '@an
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { Login } from './login/login';
 import { Signup } from './signup/signup';
+import { HttpClientModule } from '@angular/common/http';
 
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule, NgFor, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common';
 import { Header } from './header/header';
-import { User } from './user/user';
 import { CurrencyConvertorPipe } from './pipe/currency-convertor-pipe';
+import { UserService, User } from '../UserService/services/user';
+import { BrowserModule } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  imports: [CurrencyConvertorPipe,CommonModule,User,RouterOutlet,ReactiveFormsModule,RouterLink,NgSwitchDefault, Login, Signup,Header,  FormsModule,NgIf,NgFor,NgSwitch,NgSwitchCase],
+  imports: [ HttpClientModule,CurrencyConvertorPipe,CommonModule,RouterOutlet,ReactiveFormsModule,RouterLink,NgSwitchDefault, Login, Signup,Header,  FormsModule,NgIf,NgFor,NgSwitch,NgSwitchCase],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {  
-
   
+     users$: any;
+  selectedUser: Partial<User> & { id?: number; name?: string } = {};
+
+  constructor(private userService: UserService) {
+    this.refreshUsers(); // load users initially
+  }
+
+  saveUser(form: NgForm) {
+    if (!this.selectedUser.name) {
+      alert('Name is required.');
+      return;
+    }
+
+    if (this.selectedUser.id) {
+      // Update
+      this.userService.updateUser(this.selectedUser.id, this.selectedUser as User)
+        .subscribe(() => this.refreshUsers());
+    } else {
+      // Create
+      this.userService.addUser(this.selectedUser as User)
+        .subscribe(() => this.refreshUsers());
+    }
+
+    form.resetForm();
+    this.selectedUser = {};
+  }
+
+  editUser(user: User) {
+    this.selectedUser = { ...user }; // clone to avoid reference issues
+  }
+
+  deleteUser(id: number) {
+    if (confirm('Are you sure?')) {
+      this.userService.deleteUser(id).subscribe(() => this.refreshUsers());
+    }
+  }
+
+  refreshUsers() {
+    this.users$ = this.userService.getUsers(); // Observable remains safe
+  }
+
+//   users$: any;
+//   constructor(private user: UserService) {
+//     this.users$ = this.user.getUsers();
+    
+//   }
+// ngOnInit() {
+//   this.user.getUsers().subscribe(data => {
+//     console.log("Users from API:", data);
+//   });
+// }
+
   // title = "one by one";
   // date = new Date();
   // amount = 10;

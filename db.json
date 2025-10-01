@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Ashu",
+      "role": "Manager",
+      "salary": 50000
+    },
+    {
+      "id": "2",
+      "name": "Amit",
+      "role": "Designer",
+      "salary": 45000
+    },
+    {
+      "id": "f8ef",
+      "name": "Harsh Bhoi",
+      "role": "CEO"
+    },
+    {
+      "id": "900b",
+      "name": "Rim",
+      "role": "Testing "
+    },
+    {
+      "id": "a5db",
+      "name": "Rim",
+      "role": "Testing ",
+      "salary": 4500
+    }
+  ]
+}
