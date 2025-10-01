@@ -15,18 +15,26 @@
     {
       "id": "f8ef",
       "name": "Harsh Bhoi",
-      "role": "CEO"
+      "role": "CEO",
+      "salary": 20251
     },
     {
       "id": "900b",
       "name": "Rim",
-      "role": "Testing "
+      "role": "Testing ",
+      "salary": 145000
     },
     {
-      "id": "a5db",
-      "name": "Rim",
-      "role": "Testing ",
-      "salary": 4500
+      "id": "f52d",
+      "name": "Harsh Bhoi",
+      "role": "Maain",
+      "salary": 2442
+    },
+    {
+      "id": "f091",
+      "name": "Option ",
+      "role": "Security ",
+      "salary": 35200
     }
   ]
 }
